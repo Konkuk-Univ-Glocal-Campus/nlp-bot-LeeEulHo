@@ -1,26 +1,29 @@
 import random
 
-# This list contains the random responses (you can add your own or translate them into your own language too)
-random_responses = ["That is quite interesting, please tell me more.",
-                    "I see. Do go on.",
-                    "Why do you say that?",
-                    "Funny weather we've been having, isn't it?",
-                    "Let's change the subject.",
-                    "Did you catch the game last night?"]
+# 랜덤한 챗봇의 응답을 저장해놓은 리스트 (원할 경우 추가로 지정 가능)
+random_responses = ["상당히 흥미롭네요, 더 자세하게 말씀 해주시겠어요? ",
+                    "그렇군요, 계속 말씀하세요.",
+                    "그렇게 말씀하시는 이유가 무엇이죠?",
+                    "최근 날씨가 참 재미있네요, 그렇죠?",
+                    "우리 대화 주제를 바꿔보도록 하죠.",
+                    "어제밤의 경기는 잡으셨나요?"]
 
-print("Hello, I am Marvin, the simple robot.")
-print("You can end this conversation at any time by typing 'bye'")
-print("After typing each answer, press 'enter'")
-print("How are you today?")
+# 초기 실행 때 출력하는 문장
+print("안녕하세요, 저는 간단한 대화 로봇 마빈입니다.")
+print("당신은 언제든지 대화를 종료하고 싶다면 '잘가'를 입력해주시면 됩니다.")
+print("대답을 작성 완료하시면 'ENTER'키를 눌러주세요.")
+print("오늘 하루는 어땠어요?")
 
 while True:
-    # wait for the user to enter some text
+    # 사용자의 입력을 기다림
     user_input = input("> ")
-    if user_input.lower() == "bye":
-        # if they typed in 'bye' (or even BYE, ByE, byE etc.), break out of the loop
+    if user_input.lower() == "잘가": 
+        # 입력이 '잘가'라고 들어오면 종료함
         break
     else:
+        # 랜덤한 값을 추출하여 리스트에서 랜덤 질문을 뽑아 출력함
         response = random.choices(random_responses)[0]
     print(response)
 
-print("It was nice talking to you, goodbye!")
+# 실행 종료 당시 인사 문장
+print("당신과 대화해서 즐거웠어요. 잘가요!")
